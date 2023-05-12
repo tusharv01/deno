@@ -2,4 +2,14 @@
   "imports": {
     "rex/": "./module/"
   }
+  import supportsColor from 'supports-color';
+
+  const isColorSupported = Deno.isatty(Deno.stdout.rid) && supportsColor.stdout;
+
+  if (isColorSupported) {
+  console.log('Color is supported!');
+  } else {
+  console.log('Color is not supported!');
+ }
+
 }
